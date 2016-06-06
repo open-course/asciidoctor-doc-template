@@ -14,6 +14,15 @@
  * limitations under the License.                                                                 *
  **************************************************************************************************/
 
+def getRootProperty(String property) {
+    if (rootProject.hasProperty(property)) {
+        def category = rootProject.getProperty(property)
+        return category
+    }
+    return "property"
+}
+
+
 buildscript {
     repositories {
         jcenter()
@@ -52,9 +61,10 @@ subprojects {
         separateOutputDirs = true
         options doctype: ['book'], eruby: 'erubis'
         attributes = [
+                'highlight'    : 'highlight.js',
                 'sectnums'     : 'true',
                 'imagesdir'    : 'images',
-                'toc'          : 'left',
+                'toc'          : 'right',
                 'toc-title'    : 'Table of Contents',
                 'toclevels'    : '3',
                 'nofooter'     : 'true',
@@ -64,7 +74,7 @@ subprojects {
                 'idprefix'     : '',
                 'idseparator'  : '-',
                 'docinfo1'     : 'false',
-                'stylesheet'   : "${rootProject.projectDir}/stylesheet/foundation.css",
+                'stylesheet'   : "${rootProject.projectDir}/stylesheet/${getProperty("theme")}.css",
                 'docinfo2'     : 'false']
     }
     defaultTasks 'asciidoctor'
