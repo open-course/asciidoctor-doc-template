@@ -30,7 +30,7 @@ buildscript {
 
     ext {
         asciidoctorPluginVersion = "1.5.3"
-        jrubyPluginVersion = "1.2.1"
+        jrubyPluginVersion = "1.4.0"
     }
 
     dependencies {
@@ -42,7 +42,7 @@ buildscript {
 subprojects {
 
     ext {
-        asciidoctorDiagramVersion = "1.4.0"
+        asciidoctorDiagramVersion = "1.5.5"
     }
     apply plugin: "org.asciidoctor.gradle.asciidoctor"
     apply plugin: "com.github.jruby-gradle.base"
