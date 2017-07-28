@@ -61,7 +61,7 @@ subprojects {
         separateOutputDirs = true
         options doctype: ['book'], eruby: 'erubis'
         attributes = [
-                'highlight'    : 'highlight.js',
+                'source-highlighter'    : 'coderay',
                 'sectnums'     : 'true',
                 'imagesdir'    : 'images',
                 'toc'          : 'right',
